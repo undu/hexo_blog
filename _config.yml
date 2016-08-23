@@ -3,8 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Álvaro Castellano's personal website
-subtitle:
+title: Álvaro Castellano
+subtitle: Personal Website
 description:
 author: Álvaro Castellano Vela
 language: en
@@ -63,7 +63,8 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: meilidu
+#theme: meilidu
+theme: chan
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
