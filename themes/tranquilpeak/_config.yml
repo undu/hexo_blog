@@ -47,12 +47,16 @@ sidebar:
             title: global.archives
             url: /all-archives
             icon: archive
-        search:
-            title: global.search
-            url: /#search
-            icon: search
+#        search:
+#            title: global.search
+#            url: /#search
+#            icon: search
             # `open-algolia-search` classes are used to open algolia search modal
             class: open-algolia-search
+        resume:
+            title: Resume
+            url: https://github.com/a-castellano/pandoc_resume/raw/master/resume.pdf
+            icon: search
         about:
             title: global.about
             url: /#about
@@ -86,11 +90,10 @@ sidebar:
              title: global.mail
              url: mailto:alvaro.castellano.vela@gmail.com
              icon: envelope-o
-    rss:
-        rss:
-            title: global.rss
-            url: /atom.xml
-            icon: rss
+         rss:
+             title: global.rss
+             url: /atom.xml
+             icon: rss
 
 
 # Header configuration
@@ -192,3 +195,13 @@ gravatar_email:
 fb_admin_ids:
 # Your Facebook app id used to connect your blog with your facebook app account (Facebook Insights). E.g : 9841307
 fb_app_id:
+
+feed:
+    type: atom
+    path: atom.xml
+    limit: 20
+
+keywords:
+    - a-casterllano
+    - sysadmin
+    - devops
