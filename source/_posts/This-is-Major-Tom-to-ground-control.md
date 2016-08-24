@@ -1,9 +1,14 @@
 ---
 title: This is Major Tom to ground control
-date: 2016-08-23 22:57:34
+date: 2016-08-23 23:57:34
+categories:
+    - global
 tags:
     - hexo
-    - blog
+keywords:
+    - hexo
+coverImage: http://www.walldevil.com/wallpapers/a87/space-shuttle-soyuz-wallpaper-astronomy-nasa-outer-wallpapers.jpg
+
 ---
 Engines Ready! It is Time to liftoff!
 
@@ -13,7 +18,7 @@ First of all. How is this blog made?
 
 I'm using [Hexo](https://hexo.io/) as blogging platfform. I found it few days ago and it seems really useful and easy to use. Following the [documentation](https://hexo.io/docs/) this blog was set in few minutes.
 
-The feature I like the most is that you can mantain the blog in your system (in my case I'm using an Ubuntu 16.04 VM) for writting posts. When the post is ready to be published you only have to "build" the blog and "deploy" it to your site repo. Hexo will generate a static website in the previously choosen repository (it is all in the [documentation](https://hexo.io/docs/)).
+The feature I like the most is that you can mantain the blog in your local system (in my case I'm using an Ubuntu 16.04 VM) for writting posts. When the post is ready to be published you only have to "build" the blog and "deploy" it to your site repo. Hexo will generate a static website in the previously choosen repository (it's all in the [documentation](https://hexo.io/docs/)).
 
 So, when I've finished this post, from my VM, I check that the post is OK rendering the blog in my brwoser.
 
