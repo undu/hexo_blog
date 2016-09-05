@@ -28,7 +28,7 @@ $ hexo server
 
 I can see the local version of my blog in http://MY_SERVER_IP:4000 (by default it uses that port)
 
-If everithing looks fine to me it's time to bloud the static content and deploy it.
+If everithing looks fine to me it's time to build the static content and deploy it.
 
 ``` bash
 $ hexo generate && hexo deploy
@@ -36,6 +36,6 @@ $ hexo generate && hexo deploy
 
 And that's all! The new post it's been published in my blog!
 
-The Hexo blog is stored in my [GitHub acccount](https://github.com/a-castellano/hexo_blog) and the static webpage that you are wathing is [there](https://github.com/a-castellano/a-castellano.github.io) too.
+The Hexo blog is stored in my [GitHub acccount](https://github.com/a-castellano/hexo_blog) and the static webpage that you are watching is [there](https://github.com/a-castellano/a-castellano.github.io) too.
 
 I'm not explaining how to set up an hexo blog, the [Hexo documentation](https://hexo.io/docs/) is all you need for doing it.
