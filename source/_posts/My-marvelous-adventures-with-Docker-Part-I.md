@@ -1,6 +1,6 @@
 ---
 title: My marvelous adventures with Docker - Part I
-date: date: 2016-09-05 00:57:30
+date: 2016-09-05 08:59:09
 categories:
     - global
 tags:
@@ -195,8 +195,9 @@ docker create --name ArchonWeb --hostname ArchonWeb -p 8080:80 -i acastellano/ar
 docker start ArchonWeb
 ```
 
-It works! Wait..... what happends if we put private webpages in our container, our conted will be public if we commit our images. Where the hell are my database for my web apps? 
+It works! Wait..... what happends if we put private webpages in our container, our conted will be public if we commit our images. Where the hell are my database for my web apps?
 
 Keep calm, in the next adventure I will talk about volumes and Docker Composer (for automatize your dockers deployment.)
 
 See you in the next post.
+
