@@ -39,7 +39,7 @@ This comand looks nice but... What all these arguments mean?
 **-p:** the port forwarding definition, write as many as you need
 **-i:** the desired image to deploy
 
-After all these arguments we have to specify wich comand (with its own arguments) will be runned by our container on start.
+After all these arguments we have to specify which comand (with its own arguments) will be executed by our container on start.
 
 **/usr/sbin/apache2ctl -D FOREGROUND**
 
@@ -87,7 +87,7 @@ CONTAINER ID        IMAGE                   COMMAND                  CREATED    
 ea13cfe69acf        YOUR_USERNAME/archonweb "/usr/sbin/apache2ctl"   50 seconds ago      Created                                 ArchonWeb
 ```
 
-There are no ports listed because the container is not launched.
+There are no ports listed because the container is not in execution.
 
 ``` bash
 docker commit -m "Added COMMAND" -a "YOUR NAME" ArchonWeb YOUR_USERNAME/archonweb:v2
@@ -105,7 +105,7 @@ If you are not signed in our [Docker Hub](https://hub.docker.com) account the fo
 docker push YOUR_USERNAME/archonweb:v2
 ```
 
-In our [Docker Hub](https://hub.docker.com) account we could see our two tags.
+In our [Docker Hub](https://hub.docker.com) account we could see the two tags.
 
 {% image fancybox center clear group:travel https://s3-eu-west-1.amazonaws.com/a-castellano.github.io/docker_image_tags01.png  "My two tags" %}
 
@@ -141,7 +141,7 @@ docker inspect ArchonWeb
 ]
 ```
 
-Afert starting our docker container we would see our apache default page throught port 8080 in our docker host.
+After starting our docker container we would see our apache default page throught port 8080 in our docker host.
 
 **Using Dockerfile to create images**
 
@@ -167,7 +167,7 @@ tree
 └── README.md
 ```
 
-There are more files that the docker file, we will use the other files later.
+There are more files side from the DockerFile, we will use the other later. 
 
 This is our Dockerfile.
 
@@ -175,7 +175,7 @@ This is our Dockerfile.
 
 This Docker file will create a new image **FROM** our archonweb:latest current image, it will update our packages (using **RUN** Docker will execute commands inside our image). The Dockerfile defines the open ports that will be open too. Finally, tt sets the image command for starting apache2 when the container starts.
 
-Build the image form uing dockerfile
+Build the image form using dockerfile
 ``` bash
 docker build -t YOUR_USERNAME/archonweb:v2 .
 docker images
@@ -188,7 +188,7 @@ acastellano/archonweb    latest              c739c75c3b8e        12 days ago    
 docker create --name ArchonWeb --hostname ArchonWeb -p 8080:80 -i YOUR_USERNAME/archonweb:v2
 ```
 
-If we start our new ArchonWeb contaiter it will work in the same way than the previous one.
+If we start our new ArchonWeb contaiter it will work in the same way as before.
 
 As we did before we can commit the image:
 
@@ -210,7 +210,7 @@ bash: nano: command not found
 
 Why we don't have any editor? Don't lose your mind!
 
-Docker images should be as small as possible so it would be reasonable to have only essential packages installed. So please, don't install text editors or other tools that are not necesaty for the main purpose of the image.
+Docker images should be as small as possible so it would be reasonable to have only essential packages installed. So please, don't install text editors or other tools that are not necessary for the main purpose of the image.
 
 We are going to use volumes. A volume is a local directory wich is mounted in our container, so we can edit files that the container can see. When we mount a volume in existing location it will be overwritten.
 
@@ -227,8 +227,7 @@ echo $PWD
 /root/docker/ArchonWeb
 ```
 
-We have to use absulote paths
-
+We have to use absolute paths.
 ``` bash
 docker create --name ArchonWebVolumes --hostname ArchonWebVolumes -p 8081:80 -v $PWD/apache2_www:/var/www -v $PWD/apache2_sites_enabled:/etc/apache2/sites-enabled -i YOUR_USERNAME/archonweb:v2
 docker start ArchonWebVolumes
@@ -301,7 +300,7 @@ docker push YOUR_USERNAME/archonweb:release
 
 **Docker compose**
 
-In the last part of this post we are going to create two containers. First container will be a new version of our ArchonWeb contanier. Second container will be a database server, we will use MAriaDB. Instead of creating our own docker image we will use a the public MariaDB public image.
+In the last part of this post we are going to create two containers. First container will be a new version of our ArchonWeb contanier. Second container will be a database server, we will use MariaDB. Instead of creating our own docker image we will use a the public MariaDB public image.
 
 Our new ArchonWeb app needs to connect to a database so we need to establish a conecction between our two containers. We could create the containers and use docker for configuring a new network and connect our containers to it but there is another way to do it.
 
