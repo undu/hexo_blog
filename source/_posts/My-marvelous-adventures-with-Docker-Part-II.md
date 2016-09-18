@@ -7,8 +7,9 @@ tags:
     - docker
 keywords:
     - docker
+    - dockerfile
     - docker-compose
-coverImage: https://resize.rbl.ms/simage/https%3A%2F%2Fassets.rbl.ms%2F243810%2F397x306.jpg/1920,1000/rlAjK16vaMttAtWh/img.jpg
+coverImage: https://img.youtube.com/vi/h16zyxiwDLY/maxresdefault.jpg
 ---
 
 **In this post I continue my adventures with Docker. After creating our first image and container in the previous [post](https://a-castellano.github.io/2016/09/05/My-marvelous-adventures-with-Docker-Part-I/) I will look into how docker images can autostart services and how to establish comunication between containers.**
