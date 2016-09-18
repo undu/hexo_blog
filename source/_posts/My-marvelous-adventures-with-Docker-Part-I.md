@@ -9,11 +9,14 @@ keywords:
     - docker
 coverImage: http://img10.deviantart.net/bdff/i/2007/210/1/7/humpback_whale_by_kaylalily.png
 ---
+
+**In this post I talk about how to get started in Docker. First we will set a Docker server, afterwards we will create your first Docker image and we will run it.** 
+
 Let's play with Docker and learn something about it!
 
-But wait, what the hell is Docker? [Docker](https://www.docker.com) is an open platform to build, ship and run distributed applications anywhere. So you can run apps which "live" inside a contaniner runned and mannaged by Docker. It is similar to VirtualBox but Docker is lighter cause it's architectural approach.
+But wait, what is Docker? [Docker](https://www.docker.com) is an open platform to build, ship and run distributed applications anywhere. So you can run apps which "live" inside a contaniner runned and mannaged by Docker.
 
-It's very useful when you want to scale your app, the more load, the more containers containing the same app image you'll deploy very quickly. It could be like Amazon Auto Scaling Group but you won't deploy full machines.
+It is very useful when you want to scale your app, the more load, the more containers containing the same app image you will deploy very quickly. It could be like Amazon Auto Scaling Group but you will not deploy full machines.
 
 The containers run images with your apps, in this post I will create 3 images (I will call them Archons). We will store the docker images into our [Docker Hub Repo](https://hub.docker.com).
 
@@ -22,11 +25,11 @@ The containers run images with your apps, in this post I will create 3 images (I
 Im going to create an 20$/month Ubuntu Droplet in my [Digital Ocean](https://www.digitalocean.com) account and I will use [Ansible](https://www.ansible.com) to install Docker.
 
 {% alert info %}
-I'm not going to explain what Ansible is and how to use it. In this post and the following ones I may use my own Ansible repo. I've promised to myself that I will write a wiki for that project ASAP.
+I am still working on improving the wiki of my own repo for Ansible. I will use it in the following post of this series once I have it ready.
 {% endalert %}
 
 
-So, let's clone my [Sysadmin Scripts](https://www.digitalocean.com) repo and I will use my Docker Role to install all the necesary packages in my droplet.
+So, let's clone my [Sysadmin Scripts](https://github.com/a-castellano/Sysadmin-Scripts.git) repo and I will use my Docker Role to install all the necesary packages in my droplet.
 ``` bash
 git clone https://github.com/a-castellano/Sysadmin-Scripts.git
 cd Sysadmin-Scripts/Ansible/
@@ -89,7 +92,7 @@ Ok, our first docker is alive, let's enter into it.
 docker exec -i -t ArchonWeb  /bin/bash
 ```
 
-Hell Yeah! We are inside our first Docker container running!
+Congratulations! We are inside our first Docker container running!
 
 As ArchonWeb will be a web server we are going to install Apache2.
 
@@ -191,13 +194,10 @@ Start the container, enter into it and start the Apache2 web server. Now go to y
 You can configue the container to launch apache2 when you start the container.
 
 ```bash
-docker create --name ArchonWeb --hostname ArchonWeb -p 8080:80 -i acastellano/archonweb /usr/sbin/apache2ctl -D FOREGROUND
+docker create --name ArchonWeb --hostname ArchonWeb -p 8080:80 -i YOUR_USERNAME/archonweb /usr/sbin/apache2ctl -D FOREGROUND
 docker start ArchonWeb
 ```
 
-It works! Wait..... what happends if we put private webpages in our container, our conted will be public if we commit our images. Where the hell are my database for my web apps?
+If you followed all the intructions until here you have ArchonWeb running. Congratulations!
 
-Keep calm, in the next adventure I will talk about volumes and Docker Composer (for automatize your dockers deployment.)
-
-See you in the next post.
-
+Probably you are having some questions and concerns such as "What happens if we put a private webpage in our container, will it be public if we commit our images? Where is the database for my webapps? No worries, this was a first example of how Docker works. In the following posts of this series I will address all these questions and more. For starters, in the next adventure I will talk about **volumes** and **Docker Composer** (for automatize your dockers deployment).
