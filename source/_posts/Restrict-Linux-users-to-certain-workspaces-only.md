@@ -1,9 +1,10 @@
 ---
-title: Restrict Linux users to determined workspaces only
-date: 2016-09-24 19:34:58
+title: Restrict Linux users to certain workspaces only
+date: 2016-09-22 20:34:58
 categories:
     - global
 tags:
+    - chroot
     - sysadmin
 keywords:
     - acl
